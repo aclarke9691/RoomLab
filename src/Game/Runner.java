@@ -3,7 +3,7 @@ package Game;
 import People.Person;
 import Rooms.Room;
 import Rooms.WinningRoom;
-
+import Board.Board;
 import java.util.Scanner;
 
 public class Runner {
@@ -35,9 +35,11 @@ public class Runner {
 		 //Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
 		building[0][0].enterRoom(player1);
+		Board House= new Board(building)
 		Scanner in = new Scanner(System.in);
 		while(gameOn)
 		{
+			System.out.println(House);
 			System.out.println("Where would you like to move? (Choose N, S, E, W)");
 			String move = in.nextLine();
 			if(validMove(move, player1, building))

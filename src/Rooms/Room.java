@@ -12,6 +12,12 @@ public class Room {
 		yLoc = y;
 	}
 
+	public String toString()
+
+	{
+		Room(x,y)="x" ;
+	}
+
 	/**
 	 * Method controls the results when a person enters this room.
 	 * @param x the Person entering
