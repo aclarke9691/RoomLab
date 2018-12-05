@@ -21,7 +21,7 @@ public class SpecialRoom1 extends Room {
         response=input.nextLine();
         if (response.equals("yes") || response.equals("Yes"))
         {
-
+         System.out.println("You pick up the teddy bear and notice that there is a hole in the back of the bear. You reach into it and find a pair of keys. You put them into your pocket and exit the room.");
         }
 
     }

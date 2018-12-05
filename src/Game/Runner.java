@@ -23,6 +23,8 @@ public class Runner {
 				building[x][y] = new Room(x,y);
 			}
 		}
+		String[] Items;
+		Items= new String[5];
 		
 		//Create a random winning room.
 		int x = (int)(Math.random()*building.length);
