@@ -3,22 +3,18 @@ import Game.Runner;
 import People.Person;
 import java.util.Scanner;
 
-public class SpecialRoom1 extends Room {
-
-
-    public SpecialRoom1(int xx, int yy)
+public class SpecialRoom2 extends Room {
+    public SpecialRoom2(int xx, int yy)
     {
         super(xx,yy);
     }
-
     public void enterRoom(Person p) {
         Scanner input = new Scanner(System.in);
         occupant = p;
         p.setxLoc(this.xLoc);
         p.setyLoc(this.yLoc);
         String response = "";
-        System.out.println("You are now in a room that seems to be a little girl's bedroom. You spot a raggedy teddy bear on the ground. Would you like to pick it up?");
-        response = input.nextLine();
+        System.out.println("You arrive upon a messy bedroom and out of the corner of your eye, you see something sparkling in the back of the room. Should you walk over there to go see what it is?");
         if (response.equals("yes") || response.equals("Yes")) {
             System.out.println("You pick up the teddy bear and notice that there is a hole in the back of the bear. You reach into it and find a pair of keys. You put them into your pocket and exit the room.");
         } else {
@@ -30,6 +26,4 @@ public class SpecialRoom1 extends Room {
             }
             System.out.println("Move anywhere to leave the room.");
         }
-    }
-
-    }
+}

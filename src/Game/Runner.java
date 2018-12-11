@@ -7,7 +7,7 @@ import Board.Board;
 import java.util.Scanner;
 
 public class Runner {
-	
+
 
 	private static boolean gameOn = true;
 	
@@ -37,7 +37,7 @@ public class Runner {
 		 //Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
 		building[0][0].enterRoom(player1);
-		Board House= new Board(building)
+		Board House= new Board(building);
 		Scanner in = new Scanner(System.in);
 		while(gameOn)
 		{

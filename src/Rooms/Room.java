@@ -13,9 +13,8 @@ public class Room {
 	}
 
 	public String toString()
-
 	{
-		Room(x,y)="x" ;
+		return "x";
 	}
 
 	/**
