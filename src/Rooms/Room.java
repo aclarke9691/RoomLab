@@ -12,9 +12,18 @@ public class Room {
 		yLoc = y;
 	}
 
+	//public String toString()
+	//{
+	//	return "x";
+	//}
 	public String toString()
 	{
-		return "x";
+		if(occupant!=null) {
+			return "P";
+		} else{
+			return "?";
+		}
+
 	}
 
 	/**

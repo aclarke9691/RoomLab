@@ -3,6 +3,7 @@ import Rooms.Room;
 
 public class Board {
     private Room[][] House;
+
     public Board(Room[][] House)
     {
         this.House=House;
@@ -16,7 +17,6 @@ public class Board {
         {
             while (j<House[i].length)
             {
-                House[i][j]= new Room (i,j);
                  row= row + House[i][j].toString();
                 j=j+1;
             }
@@ -24,6 +24,7 @@ public class Board {
             i=i+1;
             j=0;
         }
+        System.out.println(row);
     }
     //public String toString() {
         //return "x";
