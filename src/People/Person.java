@@ -7,6 +7,7 @@ public class Person {
 	String firstName;
 	String familyName;
 	int xLoc, yLoc;
+	int i=0;
 	Tool Tools[]= new Tool[5];
 
 
