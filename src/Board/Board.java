@@ -7,24 +7,26 @@ public class Board {
     {
         this.House=House;
     }
-    public void createHouse(Room[][] House)
+    public void createHouse()
     {
         int i=0;
         int j=0;
+        String row="";
         while(i<House.length)
         {
             while (j<House[i].length)
             {
                 House[i][j]= new Room (i,j);
-                 House[i][j]=Room.toString();
+                 row= row + House[i][j].toString();
                 j=j+1;
             }
+            row= row+ "\n";
             i=i+1;
             j=0;
         }
     }
-    public String toString() {
-        return "x";
+    //public String toString() {
+        //return "x";
     }
     //public String toString()
     //{
@@ -46,5 +48,5 @@ public class Board {
             //y=0;
         //}
         //return result;
-    }
-}
+    //}
+//}
