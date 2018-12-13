@@ -30,6 +30,7 @@ public abstract class Tool {
             }
         }
     }
+    public String name;
 
 
 }
