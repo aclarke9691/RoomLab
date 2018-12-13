@@ -25,6 +25,8 @@ public class Runner {
 		}
 		String[] Items;
 		Items= new String[5];
+		// make buildings which would  represent the poolhouse and house. Would i need two buildings
+		// label locations of special rooms
 		
 		//Create a random winning room.
 		int x = (int)(Math.random()*building.length);
@@ -38,6 +40,7 @@ public class Runner {
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);
 		building[0][0].enterRoom(player1);
 		Board House= new Board(building);
+		House.createHouse();
 		Scanner in = new Scanner(System.in);
 		while(gameOn)
 		{
