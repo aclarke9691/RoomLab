@@ -7,10 +7,11 @@ import Board.Board;
 import java.util.Scanner;
 
 public class Runner {
+    //make it so that it tells the person if they have been to that room before
 
 
 	private static boolean gameOn = true;
-	
+
 	public static void main(String[] args)
 	{
 		Room[][] building = new Room[5][5];
@@ -35,6 +36,9 @@ public class Runner {
 		int xx= 2;
 		int yy= 2;
 		building[xx][yy] = new Rooms.Kitchen(xx, yy);
+		int a=3;
+		int aa=2;
+		building[a][aa]= new Rooms.SpecialRoom1(a,aa);
 		 
 		 //Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0);

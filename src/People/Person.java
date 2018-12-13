@@ -9,6 +9,7 @@ public class Person {
 	int xLoc, yLoc;
 	int i=0;
 	Tool Tools[]= new Tool[5];
+	int space=0;
 
 
 	public int getxLoc() {

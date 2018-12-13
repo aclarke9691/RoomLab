@@ -1,6 +1,11 @@
 package People;
 
-public abstract class Tool {
+public  class Tool {
+    public String name;
+    public Tool(String name)
+    {
+       this.name=name;
+    }
     public static void useKey()
     {
         System.out.println("You used the key to unlock the poolhouse!");
@@ -30,7 +35,7 @@ public abstract class Tool {
             }
         }
     }
-    public String name;
+
 
 
 }
