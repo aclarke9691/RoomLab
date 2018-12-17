@@ -6,13 +6,12 @@ import java.util.Scanner;
 
 
 public class SpecialRoom2 extends Room {
-    private Tool Tools[]; //does this work
-    private int i;
+  public Tool Tools[]; //does this work
+    public int i;
 
-    public SpecialRoom2(int xx, int yy, Tool Tools[], int i) {
+    public SpecialRoom2(int xx, int yy) {
         super(xx, yy);
         this.Tools = Tools;
-        this.i=i;
     }
 
     public void enterRoom(Person p) {
@@ -23,8 +22,8 @@ public class SpecialRoom2 extends Room {
         String response = "";
         System.out.println("You arrive upon a messy bedroom and out of the corner of your eye, you see something sparkling in the back of the room. Should you walk over there to go see what it is?");
         if (response.equals("yes") || response.equals("Yes")) {
-            System.out.println("You pick up the teddy bear and notice that there is a hole in the back of the bear. You reach into it and find a pair of keys. You put them into your pocket and exit the room.");
-            Tools[i].name= "keys"; //how do i get the tool class to accept string
+            System.out.println("You walk over there and notice it is a key that says 'masterkey' on the back. This must be able to open every door! You put it into your pocket and exit the room.");
+            Tools[i].name= "masterkey"; //how do i get the tool class to accept string
             i=i+1;
         }
         else {

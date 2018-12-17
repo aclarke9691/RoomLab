@@ -15,6 +15,15 @@ public class Runner {
 	public static void main(String[] args)
 	{
 		Room[][] building = new Room[5][5];
+		Room [] [] poolhouse= new Room[2][2];
+		//Fill the poolhouse with regular rooms
+		for (int x = 0; x<poolhouse.length; x++)
+		{
+			for (int y = 0; y < poolhouse[x].length; y++)
+			{
+				building[x][y] = new Room(x,y);
+			}
+		}
 		
 		//Fill the building with normal rooms
 		for (int x = 0; x<building.length; x++)
@@ -39,9 +48,12 @@ public class Runner {
 		int a=3;
 		int aa=2;
 		building[a][aa]= new Rooms.SpecialRoom1(a,aa);
+		int b=1;
+		int bb=3;
+		building[b][bb]= new Rooms.SpecialRoom2(b,bb);
 		 
 		 //Setup player 1 and the input scanner
-		Person player1 = new Person("FirstName", "FamilyName", 0,0);
+		Person player1 = new Person("FirstName", "FamilyName", 0,0,50);
 		building[0][0].enterRoom(player1);
 		Board Board= new Board(building);
 		Scanner in = new Scanner(System.in);
@@ -50,14 +62,16 @@ public class Runner {
 			Board.createHouse();
 			System.out.println("Where would you like to move? (Choose N, S, E, W)");
 			String move = in.nextLine();
-			if(validMove(move, player1, building))
-			{
-				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
-				
-			}
-			else {
-				System.out.println("Please choose a valid move.");
-			}
+
+
+				if (validMove(move, player1, building)) {
+					System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
+
+				} else {
+
+					System.out.println("Please choose a valid move.");
+				}
+
 			
 			
 		}

@@ -7,9 +7,10 @@ public class Person {
 	String firstName;
 	String familyName;
 	int xLoc, yLoc;
-	int i=0;
+	int i=0;        //is this where i should put
 	Tool Tools[]= new Tool[5];
 	int space=0;
+	int health;
 
 
 	public int getxLoc() {
@@ -28,7 +29,9 @@ public class Person {
 		this.yLoc = yLoc;
 	}
 
-	public Person (String firstName, String familyName, int xLoc, int yLoc)
+	//public int getHealth { return health;}
+
+	public Person (String firstName, String familyName, int xLoc, int yLoc, int health)
 	{
 		this.firstName = firstName;
 		this.familyName = familyName;

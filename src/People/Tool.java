@@ -18,14 +18,14 @@ public  class Tool {
 
     public static void useGem()
     {
-        System.out.println("You have found the secret gem- an emerald. A fairty appears out of the air and casts you back to your home. You are free, at last!");
+        System.out.println("You have found the secret gem- an emerald. A fairy appears out of the air and casts you back to your home. You are free, at last!");
     }
 
     public static void usePhone(int num)
     {
         if (num==1)
         {
-            System.out.println("You press the first button and a magic fairy answers the phone. He tells you that a special room is at 4,1.");
+            System.out.println("You press the first button and a magic fairy answers the phone. He tells you that a dangerous room is at 4,1.");
         }
         else
         {
