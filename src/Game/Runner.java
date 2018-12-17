@@ -60,6 +60,7 @@ public class Runner {
 		while(gameOn)
 		{
 			Board.createHouse();
+			System.out.println("This is so hard I'm gonna cry. Anyways welcome to a haunted house where you have to try not to get killed. It barely has anything so yeah lml!");
 			System.out.println("Where would you like to move? (Choose N, S, E, W)");
 			String move = in.nextLine();
 

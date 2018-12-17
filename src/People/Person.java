@@ -37,6 +37,7 @@ public class Person {
 		this.familyName = familyName;
 		this.xLoc = xLoc;
 		this.yLoc = yLoc;
+		this.health=health;
 	}
 
 
