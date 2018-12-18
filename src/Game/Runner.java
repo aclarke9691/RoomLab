@@ -51,6 +51,15 @@ public class Runner {
 		int b=1;
 		int bb=3;
 		building[b][bb]= new Rooms.SpecialRoom2(b,bb);
+		int c=2;
+		int cc=1;
+		building[c][cc]= new Rooms.DangerRoom1(c,cc);
+		int d=3;
+		int dd=4;
+		building[d][dd]= new Rooms.DangerRoom2(d,dd);
+		int e=4;
+		int ee=2;
+		building[e][ee]= new Rooms.DangerRoom3(e,ee);
 		 
 		 //Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0,50);

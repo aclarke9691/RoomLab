@@ -7,9 +7,8 @@ public class Person {
 	String firstName;
 	String familyName;
 	int xLoc, yLoc;
-	int i=0;        //is this where i should put
+	int i=0;        //is this where i should put, i am not sure if i need i
 	Tool Tools[]= new Tool[5];
-	int space=0;
 	int health;
 
 
@@ -38,6 +37,16 @@ public class Person {
 		this.xLoc = xLoc;
 		this.yLoc = yLoc;
 		this.health=health;
+	}
+
+	public static void checkHealth(int health)
+	{
+		if (health<=0)
+		{
+			System.out.println("Your health has reached 0 and you died. Play again!");
+			Game.Runner.gameOff();
+		}
+
 	}
 
 

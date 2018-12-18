@@ -1,14 +1,8 @@
 package Rooms;
 import People.Person;
-public interface DangerRoom {
-    private int health;
-    public DangerRoom(int health)
-    {
-        this.health=health;
-    }
-    public String ghostAttack
-    {
-        return health;
-    }
+import People.Tool;
+public interface DangerRoom  {
+
+    public void ghostAttack(Tool Tools[],int health, String term);
+
 }
-` `
