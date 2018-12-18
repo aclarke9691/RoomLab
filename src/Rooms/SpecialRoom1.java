@@ -8,6 +8,7 @@ import Rooms.Room;
 public class SpecialRoom1 extends Room {
 public Tool[] Tools;
 public int i;
+public String totalInventory;
 
 
     public SpecialRoom1(int xx, int yy)
@@ -16,7 +17,7 @@ public int i;
         this.Tools= Tools;
     }
 
-    public void enterRoom(Person p) {
+    public void enterRoom(Person p, Tool Tools[]) {
         Scanner input = new Scanner(System.in);
         occupant = p;
         p.setxLoc(this.xLoc);
@@ -30,6 +31,7 @@ public int i;
             System.out.println("You pick up the teddy bear and notice that there is a hole in the back of the bear. You reach into it and find a pair of keys that say 'poolhouse' on the back. You put them into your pocket and exit the room.");
             Tools[i]=new Tool("keys");
             i=i+1;
+            System.out.println("You now have the following item(s) in your bag: " + totalInventory);
             enteredRoom=true;
         } else {
             //if (response.equals("no") || response.equals("No")) {

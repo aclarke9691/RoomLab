@@ -22,8 +22,9 @@ public class Kitchen extends Room {
         response = input.nextLine();
         if (response.equals("yes") || response.equals("Yes")) {
             System.out.println("You take the bottle and see that it is holy water and is able to fight off ghosts...GHOSTS?!");
-            Tools[i].name = "holy water";
-            i = i + 1;
+            Tool hw= new Tool("holy water");
+            p.addTool(hw);
+            System.out.println(p.checkBag());
         } else {
             if (response.equals("no") || response.equals("No")) {
                 System.out.println("Okay, let's leave the room.");

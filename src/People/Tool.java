@@ -35,6 +35,10 @@ public  class Tool {
             }
         }
     }
+    public String toString()
+    {
+        return name;
+    }
 
 
 

@@ -66,10 +66,10 @@ public class Runner {
 		building[0][0].enterRoom(player1);
 		Board Board= new Board(building);
 		Scanner in = new Scanner(System.in);
+		System.out.println("Welcome to my haunted house! Your goal is to get to the last room (coordinates 4,4");
 		while(gameOn)
 		{
 			Board.createHouse();
-			System.out.println("This is so hard I'm gonna cry. Anyways welcome to a haunted house where you have to try not to get killed. It barely has anything so yeah lml!");
 			System.out.println("Where would you like to move? (Choose N, S, E, W)");
 			String move = in.nextLine();
 
