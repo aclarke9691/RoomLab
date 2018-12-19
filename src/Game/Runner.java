@@ -39,9 +39,10 @@ public class Runner {
 		// label locations of special rooms
 		
 		//Create a random winning room.
-		int x = (int)(Math.random()*building.length);
-		int y = (int)(Math.random()*building.length);
-		building[x][y] = new WinningRoom(x, y);
+		//int x = (int)(Math.random()*building.length);
+		//int y = (int)(Math.random()*building.length);
+		//s
+		// building[x][y] = new WinningRoom(x, y);
 		int xx= 2;
 		int yy= 2;
 		building[xx][yy] = new Rooms.Kitchen(xx, yy);

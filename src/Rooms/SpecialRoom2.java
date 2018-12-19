@@ -23,8 +23,9 @@ public class SpecialRoom2 extends Room {
         System.out.println("You arrive upon a messy bedroom and out of the corner of your eye, you see something sparkling in the back of the room. Should you walk over there to go see what it is?");
         if (response.equals("yes") || response.equals("Yes")) {
             System.out.println("You walk over there and notice it is a key that says 'masterkey' on the back. This must be able to open every door! You put it into your pocket and exit the room.");
-            Tools[i].name= "masterkey";
-            i=i+1;
+            Tool mk= new Tool("masterkey");
+            p.addTool(mk);
+            System.out.println("Your bag contains: " +p.checkBag());
         }
         else {
             if (response.equals("no") || response.equals("No")) {
