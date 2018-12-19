@@ -1,4 +1,5 @@
 package People;
+import People.Tool;
 
 /**
  * Person represents the player as they move through the game.
@@ -8,7 +9,11 @@ public class Person {
 	String familyName;
 	int xLoc, yLoc;
 	int i=0;        //is this where i should put, i am not sure if i need i
-	Tool Tools[]= new Tool[5];
+	Tool[] Tools = {new Tool(""),new Tool(""),new Tool(""), new Tool(""),new Tool("")};
+	public Person(){
+
+
+	}
 	int health;
 
 	public void addTool(Tool tool)

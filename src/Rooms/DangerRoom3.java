@@ -15,39 +15,39 @@ public class DangerRoom3 extends Room implements DangerRoom {
         p.setxLoc(this.xLoc);
         p.setyLoc(this.yLoc);
         System.out.println("Uh oh! You have come upon a room with a ghost in it!");
-e        System.out.println(ghostAttack(Tools, health, "holy water"));
+      //
+        // System.out.println(ghostAttack(Tools, health, "holy water"));
 
     }
     public String ghostAttack(Tool Tools[], int health, String term)
-    {
-        if (Tools[0]!=null)
+    //{if (Tools[0].name != "") ;
         {
-        int a=-1;
-        for (int j=0; j<5; j++)
-        {
+            if (!Tools[0].name.equals("")) {
 
-            if (Tools[j].name.equals(term))
-            {
-                a=0;
+                int a = -1;
+                for (int j = 0; j < 5; j++) {
+
+                    if (Tools[j].name.equals(term)) {
+                        a = 0;
+                    } else {
+                        a = -1;
+                    }
+                }
+                {
+                    if (a == 0) {
+                        return "You used holy water to fight off a ghost! You didn't get hurt at all.";
+                    } else {
+                        health = health - 25;
+                        return "You got attacked by a ghost! Your health has decreased by 25 points.";
+
+                    }
+
+                    //People.Person.checkHealth(health);
+                }
+            } else {
+                return "You got attacked by a ghost! Your health has decreased by 25 points.";
             }
-        }
-        if (a==0)
-        {
-            return "You used holy water to fight off a ghost! You didn't get hurt at all.";
-        }
-        else
-        {
-            health=health-25;
-            return "You got attacked by a ghost! Your health has decreased by 25 points.";
+
 
         }
     }
-    else
-        {
-            return "You got attacked by a ghost! Your health has decreased by 25 points.";
-        }
-        //People.Person.checkHealth(health);
-    }
-
-
-}

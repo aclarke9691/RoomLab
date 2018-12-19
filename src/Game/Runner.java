@@ -1,6 +1,7 @@
 package Game;
 
 import People.Person;
+import People.Tool;
 import Rooms.Room;
 import Rooms.WinningRoom;
 import Board.Board;
@@ -11,9 +12,13 @@ public class Runner {
 
 
 	private static boolean gameOn = true;
+	Tool[] Tools;
+
 
 	public static void main(String[] args)
 	{
+		boolean portal=false;
+
 		Room[][] building = new Room[5][5];
 		Room [] [] poolhouse= new Room[2][2];
 		//Fill the poolhouse with regular rooms
@@ -33,8 +38,6 @@ public class Runner {
 				building[x][y] = new Room(x,y);
 			}
 		}
-		String[] Items;
-		Items= new String[5];
 		// make buildings which would  represent the poolhouse and house. Would i need two buildings
 		// label locations of special rooms
 		
@@ -61,6 +64,9 @@ public class Runner {
 		int e=4;
 		int ee=2;
 		building[e][ee]= new Rooms.DangerRoom3(e,ee);
+		int f=1;
+		int ff=1;
+		poolhouse[f][ff]= new Rooms.WinningRoom(f,ff);
 		 
 		 //Setup player 1 and the input scanner
 		Person player1 = new Person("FirstName", "FamilyName", 0,0,50);
