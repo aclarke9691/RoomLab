@@ -8,30 +8,32 @@ public class DangerRoom3 extends Room implements DangerRoom {
     {
         super(xx, yy);
     }
-    public Tool Tools[];
+    public Tool[] Tools;
     public int health;
     public void enterRoom(Person p) {
         occupant = p;
         p.setxLoc(this.xLoc);
         p.setyLoc(this.yLoc);
+        Tools=p.getTools();
+        health=p.getHealth();
         System.out.println("Uh oh! You have come upon a room with a ghost in it!");
       //
-        // System.out.println(ghostAttack(Tools, health, "holy water"));
+        System.out.println(ghostAttack(health, "holy water"));
 
     }
-    public String ghostAttack(Tool Tools[], int health, String term)
+    public String ghostAttack( int health, String term)
     //{if (Tools[0].name != "") ;
         {
-            if (!Tools[0].name.equals("")) {
+            if (Tools[0]!=null) {
 
                 int a = -1;
                 for (int j = 0; j < 5; j++) {
 
-                    if (Tools[j].name.equals(term)) {
+                    if (Tools[j]!=null &&Tools[j].toString().equals(term)){
                         a = 0;
-                    } else {
-                        a = -1;
+                        break;
                     }
+
                 }
                 {
                     if (a == 0) {

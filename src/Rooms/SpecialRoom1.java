@@ -23,8 +23,7 @@ public String totalInventory;
         p.setxLoc(this.xLoc);
         p.setyLoc(this.yLoc);
         String response = "";
-        if(enteredRoom=false)
-        {
+
         System.out.println("You are now in a room that seems to be a little girl's bedroom. You spot a raggedy teddy bear on the ground. Would you like to pick it up?");
         response = input.nextLine();
         if (response.equals("yes") || response.equals("Yes")) {
@@ -32,20 +31,14 @@ public String totalInventory;
             Tools[i]=new Tool("keys");
             i=i+1;
             System.out.println("You now have the following item(s) in your bag: " + totalInventory);
-            enteredRoom=true;
         } else {
             //if (response.equals("no") || response.equals("No")) {
                 System.out.println("Okay, let's leave the room.");
             //}
         }
-        }
-           else
-            {
-                if (enteredRoom=true)
-                { System.out.println("You have already been to this bedroom.");}
-            }
-            System.out.println("Move anywhere to leave the room.");
 
+
+        System.out.println("Move anywhere to leave the room.");
     }
 
     }

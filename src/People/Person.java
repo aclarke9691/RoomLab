@@ -8,25 +8,37 @@ public class Person {
 	String firstName;
 	String familyName;
 	int xLoc, yLoc;
-	int i=0;        //is this where i should put, i am not sure if i need i
-	Tool[] Tools = {new Tool(""),new Tool(""),new Tool(""), new Tool(""),new Tool("")};
+	int i=0;
+	Tool[] Tools= new Tool[5];
+	//Tool[] Tools = {new Tool(""),new Tool(""),new Tool(""), new Tool(""),new Tool("")};
 	public Person(){
 
 
 	}
-	int health;
+	int health=50;
 
 	public void addTool(Tool tool)
 	{
 		for (int i=0; i<Tools.length; i++)
 		{
-			if (Tools[i]==null)
+			//if (Tools[i].name.equals(""))
+			if(Tools[i]==null)
 			{
 				Tools[i]= tool;
 				break;
+
 			}
 
+
 		}
+	}
+	public Tool[] getTools()
+	{
+		return this.Tools;
+	}
+	public int getHealth()
+	{
+		return health;
 	}
 
 

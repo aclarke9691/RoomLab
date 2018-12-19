@@ -8,17 +8,19 @@ public class DangerRoom2 extends Room implements DangerRoom {
     {
         super(xx, yy);
     }
+    public Tool[] Tools;
     public void enterRoom(Person p) {
         occupant = p;
         p.setxLoc(this.xLoc);
         p.setyLoc(this.yLoc);
+        Tools=p.getTools();
     }
-    public String ghostAttack(Tool Tools[], int health, String term)
+    public String ghostAttack( int health, String term)
     {
         int a=-1;
         for (int j=0; j<5; j++)
         {
-            if (Tools[j].name==term)
+            if (Tools[j].toString()==term)
             {
                 a=0;
             }

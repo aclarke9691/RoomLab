@@ -5,7 +5,6 @@ import Game.Runner;
 
 public class Portal extends Room{
     public Tool Tools[];
-    public int i;
 
     public Portal (int xx, int yy)
     {
@@ -16,9 +15,45 @@ public class Portal extends Room{
         occupant = p;
         p.setxLoc(this.xLoc);
         p.setyLoc(this.yLoc);
-        System.out.println("You have reached the portal!");//make it so that it switches to building 2, and can say if i entered room already
-    Game.Runner.poolhouse[0][0].enterRoom(Person Player1);
+        Tools = p.getTools();
+        System.out.println(portalCheck("master key"));
+        if (portalCheck("master key")==true)
+        {
+            Runner.gameOne==false;
+            //Runner.gameTwo==true;
+        }
     }
+        public boolean portalCheck(String term)
+        //{if (Tools[0].name != "") ;
+        {
+            if (Tools[0]!=null) {
+
+                int a = -1;
+                for (int j = 0; j < 5; j++) {
+
+                    if (Tools[j]!=null &&Tools[j].toString().equals(term)){
+                        a = 0;
+                        break;
+                    }
+
+                }
+
+                    if (a == 0) {
+
+                        System.out.println("You unlocked the portal! You have now been casted to the poolhouse!");
+                        return true;
+
+                    } else {
+                        System.out.println("You need a master key in order to unlock this door");
+                        return false;
+
+                    }
+            }
+            else
+            {
+                System.out.println("You need a master key in order to unlock this door.");
+                return false;
+            }
 
 
-}
+}}
