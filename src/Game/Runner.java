@@ -24,7 +24,7 @@ public class Runner {
 		//Fill the poolhouse with regular rooms
 		for (int x = 0; x < poolhouse.length; x++) {
 			for (int y = 0; y < poolhouse[x].length; y++) {
-				building[x][y] = new Room(x, y);
+				poolhouse[x][y] = new Room(x, y);
 			}
 		}
 
@@ -90,14 +90,13 @@ public class Runner {
 				System.out.println("Please choose a valid move.");
 			}
 		}
+		poolhouse[0][0].enterRoom(player1);
 		while (gameTwo) {
 			Board2.createHouse();
-			poolhouse[0][0].enterRoom(player1);
+			//poolhouse[0][0].enterRoom(player1);
 			System.out.println("Where would you like to move? (Choose N, S, E, W)");
 			String move = in.nextLine();
-
-
-			if (validMove(move, player1, building)) {
+			if (validMove(move, player1, poolhouse)) {
 				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
 
 			} else {

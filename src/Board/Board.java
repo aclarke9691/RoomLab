@@ -8,6 +8,7 @@ public class Board {
     {
         this.House=House;
     }
+   // public Board(Room[][] poolhouse)
     public void createHouse()
     {
         int i=0;
