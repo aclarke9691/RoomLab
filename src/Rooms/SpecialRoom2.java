@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 
 public class SpecialRoom2 extends Room {
+    //Scanner input = new Scanner(System.in);
   public Tool Tools[]; //does this work
     public int i;
 
@@ -21,9 +22,10 @@ public class SpecialRoom2 extends Room {
         p.setyLoc(this.yLoc);
         String response = "";
         System.out.println("You arrive upon a messy bedroom and out of the corner of your eye, you see something sparkling in the back of the room. Should you walk over there to go see what it is?");
+        response=input.nextLine();
         if (response.equals("yes") || response.equals("Yes")) {
-            System.out.println("You walk over there and notice it is a key that says 'masterkey' on the back. This must be able to open every door! You put it into your pocket and exit the room.");
-            Tool mk= new Tool("masterkey");
+            System.out.println("You walk over there and notice it is a key that says 'master key' on the back. This must be able to open every door! You put it into your pocket and exit the room.");
+            Tool mk= new Tool("master key");
             p.addTool(mk);
             System.out.println("Your bag contains: " +p.checkBag());
         }

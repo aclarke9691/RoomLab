@@ -1,14 +1,15 @@
 package Rooms;
+
 import Game.Runner;
 import People.Person;
 import People.Tool;
 import java.util.Scanner;
-
-public class Kitchen extends Room {
+public class SpecialRoom3 extends Room {
     Scanner input = new Scanner(System.in);
     public Tool Tools[];
+    public int health;
 
-    public Kitchen(int xx, int yy) {
+    public SpecialRoom3(int xx, int yy) {
         super(xx, yy);
     }
 
@@ -17,12 +18,14 @@ public class Kitchen extends Room {
         p.setxLoc(this.xLoc);
         p.setyLoc(this.yLoc);
         String response = "";
-        System.out.println("You are now in the kitchen. You see there is a small bottle filled with a liquid on the counter. Should you go see what it is?");
+        health=p.getHealth();
+        System.out.println("You are now in the bathroom. You notice that there is something in the toilet. Reaching into the toilet will decrease your health by some, but may end up helping you in the long run. Should you go see what it is?");
         response = input.nextLine();
         if (response.equals("yes") || response.equals("Yes")) {
-            System.out.println("You take the bottle and see that it is holy water and is able to fight off ghosts...GHOSTS?!");
-            Tool hw= new Tool("holy water");
-            p.addTool(hw);
+            health=health-10;
+            System.out.println("You reach into the toilet and find a can of ghost repellent spray...huh?!!");
+            Tool spray= new Tool("spray");
+            p.addTool(spray);
             System.out.println("Your bag contains: " +p.checkBag());
         } else {
             if (response.equals("no") || response.equals("No")) {

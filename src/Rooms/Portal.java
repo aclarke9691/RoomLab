@@ -19,8 +19,8 @@ public class Portal extends Room{
         System.out.println(portalCheck("master key"));
         if (portalCheck("master key")==true)
         {
-            Runner.gameOne==false;
-            //Runner.gameTwo==true;
+            Game.Runner.gameOne=false;
+            Game.Runner.gameTwo=true;
         }
     }
         public boolean portalCheck(String term)

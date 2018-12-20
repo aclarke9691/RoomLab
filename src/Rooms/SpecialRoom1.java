@@ -8,16 +8,14 @@ import Rooms.Room;
 public class SpecialRoom1 extends Room {
 public Tool[] Tools;
 public int i;
-public String totalInventory;
 
 
     public SpecialRoom1(int xx, int yy)
     {
         super(xx,yy);
-        this.Tools= Tools;
     }
 
-    public void enterRoom(Person p, Tool Tools[]) {
+    public void enterRoom(Person p) {
         Scanner input = new Scanner(System.in);
         occupant = p;
         p.setxLoc(this.xLoc);
@@ -27,10 +25,10 @@ public String totalInventory;
         System.out.println("You are now in a room that seems to be a little girl's bedroom. You spot a raggedy teddy bear on the ground. Would you like to pick it up?");
         response = input.nextLine();
         if (response.equals("yes") || response.equals("Yes")) {
-            System.out.println("You pick up the teddy bear and notice that there is a hole in the back of the bear. You reach into it and find a pair of keys that say 'poolhouse' on the back. You put them into your pocket and exit the room.");
-            Tools[i]=new Tool("keys");
-            i=i+1;
-            System.out.println("You now have the following item(s) in your bag: " + totalInventory);
+            System.out.println("You pick up the teddy bear and notice that there is a hole in the back of the bear. You reach into it and find a bag of chips. You are confused but put it into your pocket and exit the room.");
+            Tool chips= new Tool("chips");
+            p.addTool(chips);
+            System.out.println("You now have the following item(s) in your bag: " + p.checkBag());
         } else {
             //if (response.equals("no") || response.equals("No")) {
                 System.out.println("Okay, let's leave the room.");

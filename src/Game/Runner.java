@@ -11,7 +11,7 @@ public class Runner {
 	//make it so that it tells the person if they have been to that room before
 
 
-	private static boolean gameOne = true;
+	public static boolean gameOne = true;
 	public static boolean gameTwo = false;
 	Tool[] Tools;
 
@@ -60,6 +60,9 @@ public class Runner {
 		int e = 4;
 		int ee = 2;
 		building[e][ee] = new Rooms.DangerRoom3(e, ee);
+		int h=0;
+		int hh=4;
+		building[h][hh]= new Rooms.SpecialRoom3(h,hh);
 		int g = 4;
 		building[g][g] = new Rooms.Portal(g, g);
 		int f = 1;
