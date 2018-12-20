@@ -75,7 +75,7 @@ public class Runner {
 		Board Board = new Board(building);
 		Board Board2 = new Board(poolhouse);
 		Scanner in = new Scanner(System.in);
-		System.out.println("Welcome to my haunted house! Your goal is to get to the last room (coordinates 4,4)");
+		System.out.println("Welcome to my haunted house! Your ultimate goal is to get to get to a special room in the pool house so that you can be cast back home. First, find the master key!");
 		while (gameOne) {
 			Board.createHouse();
 			System.out.println("Where would you like to move? (Choose N, S, E, W)");

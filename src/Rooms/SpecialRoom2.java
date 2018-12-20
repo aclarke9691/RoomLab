@@ -25,9 +25,10 @@ public class SpecialRoom2 extends Room {
         response=input.nextLine();
         if (response.equals("yes") || response.equals("Yes")) {
             System.out.println("You walk over there and notice it is a key that says 'master key' on the back. This must be able to open every door! You put it into your pocket and exit the room.");
-            Tool mk= new Tool("master key");
+            Tool mk= new Tool("master key", "room[4][4]");
             p.addTool(mk);
             System.out.println("Your bag contains: " +p.checkBag());
+            System.out.println("Use the master key in " + mk.function);
         }
         else {
             if (response.equals("no") || response.equals("No")) {
