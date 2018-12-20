@@ -16,11 +16,12 @@ public class DangerRoom1 extends Room implements DangerRoom {
         p.setyLoc(this.yLoc);
         Tools= p.getTools();
         health=p.getHealth();
-        System.out.println("Uh oh! You have come upon a room with a ghost in it!");
-        System.out.println(ghostAttack(health, "chips"));
+        System.out.println("Uh oh! You have come upon a room with a hungry ghost in it!");
+        System.out.println(ghostAttack("chips"));
+        System.out.println(p.checkHealth());
     }
 
-    public String ghostAttack( int health, String term) //will ghostattack automatically run
+    public String ghostAttack(String term) //will ghostattack automatically run
     {
         if (Tools[0]!=null) {
 
@@ -38,6 +39,7 @@ public class DangerRoom1 extends Room implements DangerRoom {
                     return "You used chips to feed a ghost! You didn't get hurt at all.";
                 } else {
                     health = health - 25;
+                   // System.out.println("Your current health is" + health);
                     return "You got attacked by a hungry ghost! Your health has decreased by 25 points.";
 
                 }

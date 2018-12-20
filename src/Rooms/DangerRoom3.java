@@ -18,10 +18,10 @@ public class DangerRoom3 extends Room implements DangerRoom {
         health=p.getHealth();
         System.out.println("Uh oh! You have come upon a room with a ghost in it!");
       //
-        System.out.println(ghostAttack(health, "holy water"));
+        System.out.println(ghostAttack("holy water"));
 
     }
-    public String ghostAttack( int health, String term)
+    public String ghostAttack( String term)
     //{if (Tools[0].name != "") ;
         {
             if (Tools[0]!=null) {

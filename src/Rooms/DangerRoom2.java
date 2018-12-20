@@ -18,9 +18,9 @@ public class DangerRoom2 extends Room implements DangerRoom {
         Tools=p.getTools();
         health=p.getHealth();
         System.out.println("Uh oh! You have come upon a room with a flying ghost in it!");
-        System.out.println(ghostAttack(health, "spray"));
+        System.out.println(ghostAttack( "spray"));
     }
-    public String ghostAttack( int health, String term)
+    public String ghostAttack(  String term)
     //{if (Tools[0].name != "") ;
     {
         if (Tools[0]!=null) {

@@ -13,6 +13,7 @@ public class Runner {
 
 	public static boolean gameOne = true;
 	public static boolean gameTwo = false;
+	public int health;
 	Tool[] Tools;
 
 
@@ -34,14 +35,7 @@ public class Runner {
 				building[x][y] = new Room(x, y);
 			}
 		}
-		// make buildings which would  represent the poolhouse and house. Would i need two buildings
-		// label locations of special rooms
 
-		//Create a random winning room.
-		//int x = (int)(Math.random()*building.length);
-		//int y = (int)(Math.random()*building.length);
-		//s
-		// building[x][y] = new WinningRoom(x, y);
 		int xx = 2;
 		int yy = 2;
 		building[xx][yy] = new Rooms.Kitchen(xx, yy);
@@ -84,6 +78,7 @@ public class Runner {
 
 			if (validMove(move, player1, building)) {
 				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
+				System.out.println("Your health is "+ player1.gethealth);
 
 			} else {
 
@@ -93,11 +88,11 @@ public class Runner {
 		poolhouse[0][0].enterRoom(player1);
 		while (gameTwo) {
 			Board2.createHouse();
-			//poolhouse[0][0].enterRoom(player1);
 			System.out.println("Where would you like to move? (Choose N, S, E, W)");
 			String move = in.nextLine();
 			if (validMove(move, player1, poolhouse)) {
 				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
+				System.out.println("Your health is "+ player1.getHealth());
 
 			} else {
 

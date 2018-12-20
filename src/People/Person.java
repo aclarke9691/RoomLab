@@ -10,12 +10,8 @@ public class Person {
 	int xLoc, yLoc;
 	int i=0;
 	Tool[] Tools= new Tool[5];
-	//Tool[] Tools = {new Tool(""),new Tool(""),new Tool(""), new Tool(""),new Tool("")};
-	public Person(){
 
-
-	}
-	int health=50;
+	public int health=50;
 
 	public void addTool(Tool tool)
 	{
@@ -38,7 +34,7 @@ public class Person {
 	}
 	public int getHealth()
 	{
-		return health;
+		return this.health;
 	}
 
 
@@ -103,12 +99,17 @@ public class Person {
 			//}
 		}
 
-	public static void checkHealth(int health)
+	public String checkHealth()
 	{
 		if (health<=0)
 		{
 			System.out.println("Your health has reached 0 and you died. Play again!");
 			Game.Runner.gameOff();
+			return "";
+		}
+		else
+		{
+			return "Your health is" + health;
 		}
 
 	}

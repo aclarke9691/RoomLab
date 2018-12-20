@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class SpecialRoom2 extends Room {
     //Scanner input = new Scanner(System.in);
   public Tool Tools[]; //does this work
-    public int i;
 
     public SpecialRoom2(int xx, int yy) {
         super(xx, yy);
