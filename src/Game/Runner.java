@@ -67,7 +67,7 @@ public class Runner {
 		Person player1 = new Person("FirstName", "FamilyName", 0, 0, 50);
 		building[0][0].enterRoom(player1);
 		Board Board = new Board(building);
-		Board Board2 = new Board(poolhouse);
+		Board Board2 = new Board(poolhouse,"pool house");
 		Scanner in = new Scanner(System.in);
 		System.out.println("Welcome to my haunted house! Your ultimate goal is to get to get to a special room in the pool house so that you can be cast back home. First, find the master key!");
 		while (gameOne) {
@@ -87,7 +87,7 @@ public class Runner {
 		}
 		poolhouse[0][0].enterRoom(player1);
 		while (gameTwo) {
-			Board2.createHouse();
+			Board2.createPoolhouse();
 			System.out.println("Where would you like to move? (Choose N, S, E, W)");
 			String move = in.nextLine();
 			if (validMove(move, player1, poolhouse)) {

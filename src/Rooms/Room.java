@@ -27,6 +27,16 @@ public class Room {
 
 	}
 
+	public String toString(String name)
+	{
+		if(occupant!=null) {
+			return "P";
+		} else{
+			return "x";
+		}
+
+	}
+
 	/**
 	 * Method controls the results when a person enters this room.
 	 * @param x the Person entering
