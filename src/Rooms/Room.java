@@ -7,32 +7,28 @@ public class Room {
 	int xLoc,yLoc;
 
 	
-	public Room(int x, int y)
+	public Room(int x, int y) //Location of specific room
 	{
 		xLoc = x;
 		yLoc = y;
 	}
 
-	//public String toString()
-	//{
-	//	return "x";
-	//}
-	public String toString()
+	public String toString() //The characters for the main house
 	{
 		if(occupant!=null) {
-			return "P";
+			return "P"; //Represents the player
 		} else{
-			return "?";
+			return "?"; //Represents the rooms
 		}
 
 	}
 
-	public String toString(String name)
+	public String toString(String name) //The characters for the pool house
 	{
 		if(occupant!=null) {
-			return "P";
+			return "P"; //Represents the player
 		} else{
-			return "x";
+			return "x"; //Represents the rooms
 		}
 
 	}

@@ -11,16 +11,17 @@ public class DangerRoom2 extends Room implements DangerRoom {
     public Tool[] Tools;
     public int health;
 
-    public void enterRoom(Person p) {
+    public void enterRoom(Person p) { //Check DangerRoom1 for comments
         occupant = p;
         p.setxLoc(this.xLoc);
         p.setyLoc(this.yLoc);
         Tools=p.getTools();
         health=p.getHealth();
         System.out.println("Uh oh! You have come upon a room with a flying ghost in it!");
-        System.out.println(ghostAttack( "spray"));
+        System.out.println(ghostAttack( "spray",occupant));
+        System.out.println(p.checkHealth());
     }
-    public String ghostAttack(  String term)
+    public String ghostAttack(  String term, Person p)
     //{if (Tools[0].name != "") ;
     {
         if (Tools[0]!=null) {
@@ -38,7 +39,7 @@ public class DangerRoom2 extends Room implements DangerRoom {
                 if (a == 0) {
                     return "You used ghost repellent spray to kill the ghost! You didn't get hurt at all.";
                 } else {
-                    health = health - 25;
+                    p.addHealth(25);
                     return "You got attacked by a flying ghost! Your health has decreased by 25 points.";
 
                 }

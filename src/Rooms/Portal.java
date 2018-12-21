@@ -17,14 +17,13 @@ public class Portal extends Room{
         p.setyLoc(this.yLoc);
         Tools = p.getTools();
         System.out.println(portalCheck("master key"));
-        if (portalCheck("master key")==true)
+        if (portalCheck("master key")==true) //Checks to see if the player has the master key so that they can enter the portal and move on to the pool house
         {
             Game.Runner.gameOne=false;
             Game.Runner.gameTwo=true;
         }
     }
-        public boolean portalCheck(String term)
-        //{if (Tools[0].name != "") ;
+        public boolean portalCheck(String term) //Checks to see if the player's inventory contains master key, so that they can get into the portal
         {
             if (Tools[0]!=null) {
 

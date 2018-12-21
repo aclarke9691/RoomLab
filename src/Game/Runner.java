@@ -8,7 +8,7 @@ import Board.Board;
 import java.util.Scanner;
 
 public class Runner {
-	//make it so that it tells the person if they have been to that room before
+
 
 
 	public static boolean gameOne = true;
@@ -20,8 +20,8 @@ public class Runner {
 	public static void main(String[] args) {
 		boolean portal = false;
 
-		Room[][] building = new Room[5][5];
-		Room[][] poolhouse = new Room[2][2];
+		Room[][] building = new Room[5][5]; //creates the main house
+		Room[][] poolhouse = new Room[2][2]; //creates the pool house
 		//Fill the poolhouse with regular rooms
 		for (int x = 0; x < poolhouse.length; x++) {
 			for (int y = 0; y < poolhouse[x].length; y++) {
@@ -36,7 +36,7 @@ public class Runner {
 			}
 		}
 
-		int xx = 2;
+		int xx = 2; //THe following section creates special rooms with unique methods within the man house and pool house
 		int yy = 2;
 		building[xx][yy] = new Rooms.Kitchen(xx, yy);
 		int a = 3;
@@ -63,14 +63,13 @@ public class Runner {
 		int ff = 1;
 		poolhouse[f][ff] = new Rooms.WinningRoom(f, ff);
 
-		//Setup player 1 and the input scanner
-		Person player1 = new Person("FirstName", "FamilyName", 0, 0, 50);
+		Person player1 = new Person("FirstName", "FamilyName", 0, 0); //creates player
 		building[0][0].enterRoom(player1);
 		Board Board = new Board(building);
 		Board Board2 = new Board(poolhouse,"pool house");
 		Scanner in = new Scanner(System.in);
-		System.out.println("Welcome to my haunted house! Your ultimate goal is to get to get to a special room in the pool house so that you can be cast back home. First, find the master key!");
-		while (gameOne) {
+		System.out.println("Welcome to my haunted house! Your ultimate goal is to get to get to a special room in the pool house so that you can be cast back home. First, find the master key! Beware of ghosts!"); //Greeting
+		while (gameOne) { //while the player is in the main house
 			Board.createHouse();
 			System.out.println("Where would you like to move? (Choose N, S, E, W)");
 			String move = in.nextLine();
@@ -78,7 +77,7 @@ public class Runner {
 
 			if (validMove(move, player1, building)) {
 				System.out.println("Your coordinates: row = " + player1.getxLoc() + " col = " + player1.getyLoc());
-				System.out.println("Your health is "+ player1.gethealth);
+				System.out.println("Your health is "+ player1.getHealth());
 
 			} else {
 
@@ -86,7 +85,7 @@ public class Runner {
 			}
 		}
 		poolhouse[0][0].enterRoom(player1);
-		while (gameTwo) {
+		while (gameTwo) { //while the player is in the pool house
 			Board2.createPoolhouse();
 			System.out.println("Where would you like to move? (Choose N, S, E, W)");
 			String move = in.nextLine();
@@ -155,7 +154,7 @@ public class Runner {
 		return true;
 	}
 
-	public static void gameOff() {
+	public static void gameOff() { //ends both loops
 		gameOne = false;
 		gameTwo = false;
 	}

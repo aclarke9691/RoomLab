@@ -3,7 +3,7 @@ import Game.Runner;
 import People.Person;
 import People.Tool;
 
-public class DangerRoom3 extends Room implements DangerRoom {
+public class DangerRoom3 extends Room implements DangerRoom { //Check DangerRoom1 for comments
     public DangerRoom3(int xx, int yy)
     {
         super(xx, yy);
@@ -17,11 +17,11 @@ public class DangerRoom3 extends Room implements DangerRoom {
         Tools=p.getTools();
         health=p.getHealth();
         System.out.println("Uh oh! You have come upon a room with a ghost in it!");
-      //
-        System.out.println(ghostAttack("holy water"));
+        System.out.println(ghostAttack("holy water", occupant));
+        System.out.println(p.checkHealth());
 
     }
-    public String ghostAttack( String term)
+    public String ghostAttack( String term, Person p)
     //{if (Tools[0].name != "") ;
         {
             if (Tools[0]!=null) {
@@ -39,7 +39,7 @@ public class DangerRoom3 extends Room implements DangerRoom {
                     if (a == 0) {
                         return "You used holy water to fight off a ghost! You didn't get hurt at all.";
                     } else {
-                        health = health - 25;
+                        p.addHealth(-25);
                         return "You got attacked by a ghost! Your health has decreased by 25 points.";
 
                     }

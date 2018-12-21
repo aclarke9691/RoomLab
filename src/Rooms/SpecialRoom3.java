@@ -21,12 +21,12 @@ public class SpecialRoom3 extends Room {
         health=p.getHealth();
         System.out.println("You are now in the bathroom. You notice that there is something in the toilet. Reaching into the toilet will decrease your health by some, but may end up helping you in the long run. Should you go see what it is?");
         response = input.nextLine();
-        if (response.equals("yes") || response.equals("Yes")) {
-            health=health-10;
+        if (response.equals("yes") || response.equals("Yes")) { //If the player decides yes, their health decreases by 10 but a ghost repellent spray gets added into their inventory. If they decide no, the player just gets the option to leave the room.
+            p.addHealth(-10);
             System.out.println("You reach into the toilet and find a can of ghost repellent spray...huh?!!");
             Tool spray= new Tool("spray");
             p.addTool(spray);
-            System.out.println("Your bag contains: " +p.checkBag());
+            System.out.println("Your bag contains: " +p.checkBag()); //Prints items in inventory
         } else {
             if (response.equals("no") || response.equals("No")) {
                 System.out.println("Okay, let's leave the room.");

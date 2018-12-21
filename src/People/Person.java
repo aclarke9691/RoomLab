@@ -9,13 +9,13 @@ public class Person {
 	String familyName;
 	int xLoc, yLoc;
 	int i=0;
-	Tool[] Tools= new Tool[5];
+	Tool[] Tools= new Tool[5]; //Creates an inventory and as the player travels around the house, tools will be added to this list
 
-	public int health=50;
+	int health=50; //The amount of health the player has. Maximum 50. For some reason I cannot get the health to decrease. I tried everything I could think of.
 
-	public void addTool(Tool tool)
+	public void addTool(Tool tool) //Adds a tool that the player finds to the list
 	{
-		for (int i=0; i<Tools.length; i++)
+		for (int i=0; i<Tools.length; i++) //Looks for an empty space in the list to add the tool to
 		{
 			//if (Tools[i].name.equals(""))
 			if(Tools[i]==null)
@@ -28,14 +28,18 @@ public class Person {
 
 		}
 	}
+	public void addHealth(int amount) //Decreases the player's health by a given amount
+	{
+		health= health - amount;
+	}
 	public Tool[] getTools()
 	{
 		return this.Tools;
-	}
+	} //Returns list of tools
 	public int getHealth()
 	{
-		return this.health;
-	}
+		return health;
+	} //Returns the player's health
 
 
 	public int getxLoc() {
@@ -54,18 +58,16 @@ public class Person {
 		this.yLoc = yLoc;
 	}
 
-	//public int getHealth { return health;}
 
-	public Person (String firstName, String familyName, int xLoc, int yLoc, int health)
+	public Person (String firstName, String familyName, int xLoc, int yLoc)
 	{
 		this.firstName = firstName;
 		this.familyName = familyName;
 		this.xLoc = xLoc;
 		this.yLoc = yLoc;
-		this.health=health;
 	}
 
-	public String checkBag()
+	public String checkBag() //Prints what the player's inventory contains
 	{
 		String totalInventory="";
 		boolean empty ;
@@ -78,7 +80,7 @@ public class Person {
         if (!empty) {
 			for (int b = 0; b < Tools.length; b++) {
 				if (Tools[b] != null) {
-					totalInventory = totalInventory + " " + Tools[i].toString() + " ";
+					totalInventory = totalInventory + " " + Tools[b].toString() + " ";
 				}
 			}
 			return totalInventory;
@@ -86,20 +88,9 @@ public class Person {
 		else {
 			return "Your bag is empty.";}
 
-			//if (empty=true)
-			//{
-			//System.out.println("You have nothing in your inventory.");
-			//}
-			//else
-			//{
-			//if (empty=false)
-			//{
-			//System.out.println("You now have the following items in your bag: " + totalInventory);
-			//}
-			//}
 		}
 
-	public String checkHealth()
+	public String checkHealth() //Checks to see if health has reached or went below zero. If it has, the player has lost the game and they have to restart.
 	{
 		if (health<=0)
 		{
@@ -109,7 +100,7 @@ public class Person {
 		}
 		else
 		{
-			return "Your health is" + health;
+			return "";
 		}
 
 	}

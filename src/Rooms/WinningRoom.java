@@ -22,8 +22,8 @@ public class WinningRoom extends Room
 		x.setxLoc(this.xLoc);
 		x.setyLoc(this.yLoc);
 		System.out.println("You found the emerald without dying!! You have been cast back home! Congratulations.");
-		Runner.gameOff();
-		 //make a next board that would set it to the next board using a while loop
+		Runner.gameOff(); //The player has reached the end of the game, so it ends
+
 	}
 	
 

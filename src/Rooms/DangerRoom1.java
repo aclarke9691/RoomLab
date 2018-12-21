@@ -17,13 +17,13 @@ public class DangerRoom1 extends Room implements DangerRoom {
         Tools= p.getTools();
         health=p.getHealth();
         System.out.println("Uh oh! You have come upon a room with a hungry ghost in it!");
-        System.out.println(ghostAttack("chips"));
-        System.out.println(p.checkHealth());
+        System.out.println(ghostAttack("chips",occupant));
+        System.out.println(p.checkHealth()); //Checks if player has died
     }
 
-    public String ghostAttack(String term) //will ghostattack automatically run
+    public String ghostAttack(String term, Person p) //
     {
-        if (Tools[0]!=null) {
+        if (Tools[0]!=null) { //If the list is not empty, checks for required item in order to defeat the ghost
 
             int a = -1;
             for (int j = 0; j < 5; j++) {
@@ -36,18 +36,17 @@ public class DangerRoom1 extends Room implements DangerRoom {
             }
             {
                 if (a == 0) {
-                    return "You used chips to feed a ghost! You didn't get hurt at all.";
+                    return "You used chips to feed a ghost! You didn't get hurt at all."; //If the player has the required item, they do not get attacked
                 } else {
-                    health = health - 25;
-                   // System.out.println("Your current health is" + health);
-                    return "You got attacked by a hungry ghost! Your health has decreased by 25 points.";
+                    System.out.println("You got attacked by a hungry ghost! Your health has decreased by 25 points."); //If the player doesn't have the required item in their inventory, then they get attacked by the ghost
+                    p.addHealth(25);
+                    return "Your health is now " + p.getHealth();
 
                 }
 
-                //People.Person.checkHealth(health);
             }
         } else {
-            return "You got attacked by a hungry ghost! Your health has decreased by 25 points.";
+            return "You got attacked by a hungry ghost! Your health has decreased by 25 points."; //If the player doesn't have anything in their inventory, they get attacked by the ghost
         }
 
 
